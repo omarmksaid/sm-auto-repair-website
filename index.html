@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM Auto Repair - Auto Repair & Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="sticky-nav">
+  <div class="nav-container">
+    <span class="nav-logo">SM Auto Repair</span>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeNav()">Home</a></li>
+      <li><a href="#services" onclick="closeNav()">Services</a></li>
+      <li><a href="#about" onclick="closeNav()">About</a></li>
+      <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
+      <li><a href="#reviews" onclick="closeNav()">Reviews</a></li>
+      <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="home" class="hero auto-hero">
+  <h1>SM Auto Repair</h1>
+  <p class="tagline">Professional Auto Repair & Service</p>
+  <p>463 Blossom Hill Rd Ste E, San Jose, CA 95123, USA</p>
+  <p class="phone">(408) 224-5291</p>
+</header>
+
+<section id="services" class="services">
+<h2>Our Services</h2>
+<div class="services-wrapper">
+  <div class="services-headers desktop-only">
+    <div class="service-header" onclick="toggleService('oil')">
+      <h3>Oil Changes <span class="arrow">▼</span></h3>
+    </div>
+    <div class="service-header" onclick="toggleService('brakes')">
+      <h3>Brake Repair <span class="arrow">▼</span></h3>
+    </div>
+    <div class="service-header" onclick="toggleService('diagnostics')">
+      <h3>Engine Diagnostics <span class="arrow">▼</span></h3>
+    </div>
+    <div class="service-header" onclick="toggleService('transmission')">
+      <h3>Transmission Service <span class="arrow">▼</span></h3>
+    </div>
+  </div>
+  
+  <div class="service-details desktop-details" id="oil">
+    <div class="detail-tile">
+      <h4>Conventional Oil</h4>
+      <p>Standard motor oil for everyday driving. Cost-effective option for older vehicles.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Synthetic Blend</h4>
+      <p>Mix of conventional and synthetic oils. Better protection than conventional at a moderate price.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Full Synthetic</h4>
+      <p>Premium protection with superior performance in extreme temperatures and conditions.</p>
+    </div>
+  </div>
+  
+  <div class="service-details desktop-details" id="brakes">
+    <div class="detail-tile">
+      <h4>Brake Pads</h4>
+      <p>Replacement of worn brake pads with high-quality ceramic or semi-metallic options.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Rotor Service</h4>
+      <p>Rotor resurfacing or replacement to ensure smooth, safe braking performance.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Brake Fluid</h4>
+      <p>Complete brake fluid flush to maintain optimal braking system performance.</p>
+    </div>
+  </div>
+  
+  <div class="service-details desktop-details" id="diagnostics">
+    <div class="detail-tile">
+      <h4>Computer Scan</h4>
+      <p>Advanced diagnostic tools to identify engine problems and error codes.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Performance Testing</h4>
+      <p>Comprehensive engine performance analysis to optimize power and efficiency.</p>
+    </div>
+  </div>
+  
+  <div class="service-details desktop-details" id="transmission">
+    <div class="detail-tile">
+      <h4>Fluid Change</h4>
+      <p>Regular transmission fluid replacement to ensure smooth shifting and longevity.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Filter Replacement</h4>
+      <p>Transmission filter service to maintain clean fluid circulation.</p>
+    </div>
+    <div class="detail-tile">
+      <h4>Repair Service</h4>
+      <p>Expert transmission repairs for both automatic and manual transmissions.</p>
+    </div>
+  </div>
+  
+  <div class="mobile-services">
+    <div class="service-category">
+      <div class="service-header" onclick="toggleMobileService('oil-mobile')">
+        <h3>Oil Changes <span class="arrow">▼</span></h3>
+      </div>
+      <div class="service-details" id="oil-mobile">
+        <div class="detail-tile">
+          <h4>Conventional Oil</h4>
+          <p>Standard motor oil for everyday driving. Cost-effective option for older vehicles.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Synthetic Blend</h4>
+          <p>Mix of conventional and synthetic oils. Better protection than conventional at a moderate price.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Full Synthetic</h4>
+          <p>Premium protection with superior performance in extreme temperatures and conditions.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-category">
+      <div class="service-header" onclick="toggleMobileService('brakes-mobile')">
+        <h3>Brake Repair <span class="arrow">▼</span></h3>
+      </div>
+      <div class="service-details" id="brakes-mobile">
+        <div class="detail-tile">
+          <h4>Brake Pads</h4>
+          <p>Replacement of worn brake pads with high-quality ceramic or semi-metallic options.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Rotor Service</h4>
+          <p>Rotor resurfacing or replacement to ensure smooth, safe braking performance.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Brake Fluid</h4>
+          <p>Complete brake fluid flush to maintain optimal braking system performance.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-category">
+      <div class="service-header" onclick="toggleMobileService('diagnostics-mobile')">
+        <h3>Engine Diagnostics <span class="arrow">▼</span></h3>
+      </div>
+      <div class="service-details" id="diagnostics-mobile">
+        <div class="detail-tile">
+          <h4>Computer Scan</h4>
+          <p>Advanced diagnostic tools to identify engine problems and error codes.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Performance Testing</h4>
+          <p>Comprehensive engine performance analysis to optimize power and efficiency.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-category">
+      <div class="service-header" onclick="toggleMobileService('transmission-mobile')">
+        <h3>Transmission Service <span class="arrow">▼</span></h3>
+      </div>
+      <div class="service-details" id="transmission-mobile">
+        <div class="detail-tile">
+          <h4>Fluid Change</h4>
+          <p>Regular transmission fluid replacement to ensure smooth shifting and longevity.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Filter Replacement</h4>
+          <p>Transmission filter service to maintain clean fluid circulation.</p>
+        </div>
+        <div class="detail-tile">
+          <h4>Repair Service</h4>
+          <p>Expert transmission repairs for both automatic and manual transmissions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="about-modal">
+<h2>About Us</h2>
+<p>At SM Auto Repair, we pride ourselves on providing honest, reliable service that puts our customers first. Our dedicated team, led by Phong, is committed to diagnosing your vehicle's issues accurately and offering fair pricing without unnecessary upsells. Whether you're facing a complex problem or just need a helping hand, our welcoming approach and integrity make us the trusted choice for all your automotive needs.</p>
+</div>
+</section>
+
+<section id="gallery" class="gallery">
+<h2>Our Work</h2>
+<div class="grid" id="gallery-grid">
+<img src="images/stock_0.jpg"/><img src="images/stock_1.jpg"/><img src="images/stock_2.jpg"/><img src="images/stock_3.jpg"/><img src="images/stock_4.jpg"/><img src="images/stock_5.jpg"/><img src="images/stock_6.jpg"/><img src="images/stock_7.jpg"/><img src="images/stock_8.jpg"/>
+</div>
+<button class="show-more-btn" id="showMoreBtn" onclick="toggleGallery()" style="display: none;">Show More</button>
+</section>
+
+<section id="reviews" class="reviews">
+<h2>What Customers Say About Us</h2>
+<div class="reviews-summary">
+<p>Customers rave about SM Auto Repair for their honesty, fair pricing, and exceptional service. Many appreciate the team's reliability and willingness to go the extra mile, whether it's diagnosing a problem or providing referrals, making them a trusted choice for all automotive needs.</p>
+</div>
+<div class="reviews-carousel"><div class="reviews-track">
+        <div class="review">
+            <div class="review-header">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocKWFKin1hqtEvCMuWc-pzEkNFm8raCV0_l9BYoBByWuVLS4UA=s128-c0x00000000-cc-rp-mo" alt="Doug Ellam" class="profile-img">
+                <div>
+                    <h3>Doug Ellam</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <p>IMO - good people, doing honest work, at a fair price. I appreciated how they share my view and reluctance to throw money at a problem.</p>
+        </div>
+        
+        <div class="review">
+            <div class="review-header">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocLlpGRxRG2eK4Q_S43FdXbauf687NMccX5DFmwuM8Rd1WxFqg=s128-c0x00000000-cc-rp-mo-ba2" alt="Megan Allen" class="profile-img">
+                <div>
+                    <h3>Megan Allen</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <p>Phong and his team are the best! I wouldn’t trust anyone else with our car.</p>
+        </div>
+        
+        <div class="review">
+            <div class="review-header">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXw5NQLwScq_BVmRhyoHTpMYypC1o85DjtNQ2a6WipDUGgw5Zjiwg=s128-c0x00000000-cc-rp-mo-ba4" alt="Ricky D Montoya" class="profile-img">
+                <div>
+                    <h3>Ricky D Montoya</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <p class="review-text">
+                <span class="review-short">Recently I went because my truck was making it weird noise. I couldn't figure it out on my own. They diagnosed it and told me they don't normally do a catalytic converter They're not set up for it. Th...</span>
+                <span class="review-full" style="display: none;">Recently I went because my truck was making it weird noise. I couldn't figure it out on my own. They diagnosed it and told me they don't normally do a catalytic converter They're not set up for it. They referred me to another guy who did a great job at a fair price. I have recommended SM Auto to other friends as well and they like the service and the pricing. These guys are the best and they're nice people too.</span>
+                <button class="see-more-review" onclick="toggleReview(2)">See More</button>
+            </p>
+        </div>
+        
+        <div class="review">
+            <div class="review-header">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXRQXHkab82-lRORTKK_WH1dHFs6Sb3CGqMDbqPhUbuLaFDxSgl=s128-c0x00000000-cc-rp-mo" alt="Elijah Amian" class="profile-img">
+                <div>
+                    <h3>Elijah Amian</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <p class="review-text">
+                <span class="review-short">Took my Chevy sonic there, didn’t schedule an appointment. Even though my car didn’t end up running since the engine was broken, Phong was extremely helpful helping me dispose of it.
+
+This is my new m...</span>
+                <span class="review-full" style="display: none;">Took my Chevy sonic there, didn’t schedule an appointment. Even though my car didn’t end up running since the engine was broken, Phong was extremely helpful helping me dispose of it.
+
+This is my new main mechanic and will be coming back for years to come.</span>
+                <button class="see-more-review" onclick="toggleReview(3)">See More</button>
+            </p>
+        </div>
+        
+        <div class="review">
+            <div class="review-header">
+                <img src="https://lh3.googleusercontent.com/a-/ALV-UjV_fkmSWc4fZEjJUMAyuMntOAsJNaykUUXsOa8SNS56fPdRSU0BDg=s128-c0x00000000-cc-rp-mo-ba2" alt="Jimmy Lamle" class="profile-img">
+                <div>
+                    <h3>Jimmy Lamle</h3>
+                    <p>⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <p class="review-text">
+                <span class="review-short">My family and I have been loyal customers of SM Auto for over a decade. Phong, the owner, has consistently demonstrated professionalism and integrity, qualities that are paramount for us. In an indust...</span>
+                <span class="review-full" style="display: none;">My family and I have been loyal customers of SM Auto for over a decade. Phong, the owner, has consistently demonstrated professionalism and integrity, qualities that are paramount for us. In an industry where many shops upsell unnecessary repairs or exaggerate issues to push for full replacements, Phong stands apart. He will never compromise on safety and will tell you when a full replacement is necessary, but he's also straightforward and honest about when it isn't.
+
+There have been multiple occasions where I received an inflated quote from another shop, only for Phong to provide a much more reasonable estimate. His work is top-notch, and his expert knowledge is evident in every service. What truly sets him apart is his honesty—he will only recommend repairs or maintenance that are absolutely necessary. If you're on a budget, he’s also willing to suggest more affordable alternatives to OEM parts, which we greatly appreciate.
+
+Even though his prices are fair, Phong’s professionalism and attention to detail easily rival, and often exceed, what you’d find at high-end corporate shops. I highly recommend SM Auto for anyone looking for quality service with integrity.</span>
+                <button class="see-more-review" onclick="toggleReview(4)">See More</button>
+            </p>
+        </div>
+        </div><button class="carousel-btn prev" onclick="moveCarousel(-1)">‹</button><button class="carousel-btn next" onclick="moveCarousel(1)">›</button><div class="pagination-dots"><div class="desktop-dots"><span class="dot active" onclick="goToSlide(0)"></span><span class="dot" onclick="goToSlide(1)"></span><span class="dot" onclick="goToSlide(2)"></span></div><div class="mobile-dots"><span class="dot active" onclick="goToSlide(0)"></span><span class="dot" onclick="goToSlide(1)"></span><span class="dot" onclick="goToSlide(2)"></span><span class="dot" onclick="goToSlide(3)"></span><span class="dot" onclick="goToSlide(4)"></span></div></div></div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<div class="contact-container">
+  <div class="contact-info">
+    <h3>Visit Our Shop</h3>
+    <p><strong>Address:</strong><br>463 Blossom Hill Rd Ste E, San Jose, CA 95123, USA</p>
+    <p><strong>Phone:</strong> (408) 224-5291</p>
+    
+    <div class="hours">
+      <h4>Operating Hours</h4>
+      <p>Monday: 9:00 AM – 5:00 PM</p><p>Tuesday: 9:00 AM – 5:00 PM</p><p>Wednesday: 9:00 AM – 5:00 PM</p><p>Thursday: 9:00 AM – 5:00 PM</p><p>Friday: 9:00 AM – 5:00 PM</p><p>Saturday: 9:00 AM – 4:00 PM</p><p>Sunday: Closed</p>
+    </div>
+  </div>
+  <div class="contact-form">
+    <h3>Get In Touch</h3>
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+      </div>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<footer>
+<p>SM Auto Repair © All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('active');
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('active');
+}
+function toggleService(serviceId) {
+  const allDetails = document.querySelectorAll('.desktop-details');
+  const allHeaders = document.querySelectorAll('.desktop-only .service-header');
+  const allArrows = document.querySelectorAll('.desktop-only .arrow');
+  
+  allDetails.forEach(detail => {
+    if (detail.id !== serviceId) {
+      detail.classList.remove('active');
+    }
+  });
+  
+  allHeaders.forEach(header => {
+    header.classList.remove('active');
+  });
+  
+  allArrows.forEach(arrow => {
+    arrow.style.transform = 'rotate(0deg)';
+  });
+  
+  const details = document.getElementById(serviceId);
+  const clickedHeader = event.target.closest('.service-header');
+  const clickedArrow = clickedHeader.querySelector('.arrow');
+  
+  details.classList.toggle('active');
+  
+  if (details.classList.contains('active')) {
+    clickedHeader.classList.add('active');
+    clickedArrow.style.transform = 'rotate(180deg)';
+  } else {
+    clickedHeader.classList.remove('active');
+    clickedArrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+function toggleMobileService(serviceId) {
+  const details = document.getElementById(serviceId);
+  const clickedHeader = event.target.closest('.service-header');
+  const clickedArrow = clickedHeader.querySelector('.arrow');
+  
+  details.classList.toggle('active');
+  
+  if (details.classList.contains('active')) {
+    clickedArrow.style.transform = 'rotate(180deg)';
+  } else {
+    clickedArrow.style.transform = 'rotate(0deg)';
+  }
+}
+
+function toggleGallery() {
+  const grid = document.getElementById('gallery-grid');
+  const btn = document.getElementById('showMoreBtn');
+  
+  if (grid.classList.contains('collapsed')) {
+    grid.classList.remove('collapsed');
+    btn.textContent = 'Show Less';
+  } else {
+    grid.classList.add('collapsed');
+    btn.textContent = 'Show More';
+  }
+}
+
+function toggleReview(index) {
+  const review = document.querySelectorAll('.review')[index];
+  const shortText = review.querySelector('.review-short');
+  const fullText = review.querySelector('.review-full');
+  const button = review.querySelector('.see-more-review');
+  
+  if (fullText.style.display === 'none') {
+    shortText.style.display = 'none';
+    fullText.style.display = 'inline';
+    button.textContent = 'See Less';
+  } else {
+    shortText.style.display = 'inline';
+    fullText.style.display = 'none';
+    button.textContent = 'See More';
+  }
+}
+
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.sticky-nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+let currentReview = 0;
+const totalReviews = document.querySelectorAll('.review').length;
+let startX = 0;
+let isDragging = false;
+
+function moveCarousel(direction) {
+  const isMobile = window.innerWidth <= 768;
+  const reviewsPerView = isMobile ? 1 : 3;
+  const maxIndex = Math.max(0, totalReviews - reviewsPerView);
+  
+  currentReview += direction;
+  if (currentReview < 0) currentReview = maxIndex;
+  if (currentReview > maxIndex) currentReview = 0;
+  
+  const track = document.querySelector('.reviews-track');
+  const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+  track.style.transform = `translateX(-${movePercent}%)`;
+  
+  updatePaginationDots();
+}
+
+function goToSlide(index) {
+  const isMobile = window.innerWidth <= 768;
+  const reviewsPerView = isMobile ? 1 : 3;
+  const maxIndex = Math.max(0, totalReviews - reviewsPerView);
+  
+  currentReview = Math.min(index, maxIndex);
+  
+  const track = document.querySelector('.reviews-track');
+  const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+  track.style.transform = `translateX(-${movePercent}%)`;
+  
+  updatePaginationDots();
+}
+
+function updatePaginationDots() {
+  const isMobile = window.innerWidth <= 768;
+  const dotsContainer = isMobile ? '.mobile-dots' : '.desktop-dots';
+  const dots = document.querySelectorAll(`${dotsContainer} .dot`);
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentReview);
+  });
+}
+
+// Touch/swipe support with real-time movement
+const carousel = document.querySelector('.reviews-carousel');
+const track = document.querySelector('.reviews-track');
+
+if (carousel && track) {
+  // Touch events
+  carousel.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    track.style.transition = 'none';
+  });
+  
+  carousel.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - startX;
+    const isMobile = window.innerWidth <= 768;
+    const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+    track.style.transform = `translateX(${-movePercent + (diff * 0.1)}%)`;
+  });
+  
+  carousel.addEventListener('touchend', e => {
+    if (!isDragging) return;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    
+    track.style.transition = 'transform 0.3s ease';
+    if (Math.abs(diff) > 50) {
+      moveCarousel(diff > 0 ? 1 : -1);
+    } else {
+      const isMobile = window.innerWidth <= 768;
+      const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+      track.style.transform = `translateX(-${movePercent}%)`;
+    }
+    isDragging = false;
+  });
+  
+  // Mouse events
+  carousel.addEventListener('mousedown', e => {
+    startX = e.clientX;
+    isDragging = true;
+    track.style.transition = 'none';
+    e.preventDefault();
+  });
+  
+  carousel.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const currentX = e.clientX;
+    const diff = currentX - startX;
+    const isMobile = window.innerWidth <= 768;
+    const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+    track.style.transform = `translateX(${-movePercent + (diff * 0.1)}%)`;
+  });
+  
+  carousel.addEventListener('mouseup', e => {
+    if (!isDragging) return;
+    const diff = startX - e.clientX;
+    
+    track.style.transition = 'transform 0.3s ease';
+    if (Math.abs(diff) > 50) {
+      moveCarousel(diff > 0 ? 1 : -1);
+    } else {
+      const isMobile = window.innerWidth <= 768;
+      const movePercent = isMobile ? currentReview * 100 : currentReview * 33.33;
+      track.style.transform = `translateX(-${movePercent}%)`;
+    }
+    isDragging = false;
+  });
+}
+
+window.addEventListener('load', function() {
+  if (window.innerWidth <= 768) {
+    const grid = document.getElementById('gallery-grid');
+    const btn = document.getElementById('showMoreBtn');
+    const images = grid.querySelectorAll('img');
+    
+    if (images.length > 2) {
+      grid.classList.add('collapsed');
+      btn.style.display = 'block';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
